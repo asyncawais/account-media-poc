@@ -88,6 +88,7 @@ const EditableEmailTemplate = () => {
   }
 
   return (
+    <>
     <div className="layout">
       <div className="main-content-area">
       <div className="container">
@@ -121,7 +122,7 @@ const EditableEmailTemplate = () => {
         </main>
 
         {/* Footer Section */}
-        <footer className="footer">
+        <footer className="footer-email">
           <div><TipTapEditor 
             content={fieldState.footer.value} 
             onUpdate={(editor:any) => onUpdate(editor, 'footer')}  
@@ -130,7 +131,6 @@ const EditableEmailTemplate = () => {
         </footer>
       </div>
 
-      <button onClick={() => getContent()}>copy code</button>
 
       </div>
      {/* Side Drawer */}
@@ -143,6 +143,13 @@ const EditableEmailTemplate = () => {
         </div>
       </div>
     </div>
+
+<footer className="footer">
+<div className="footer-buttons">
+    <button className="btn" onClick={() => getContent()}>Save &amp; Preview</button>
+</div>
+</footer>
+</>
   );
 };
 
