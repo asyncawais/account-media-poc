@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useEditor, EditorContent, Editor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import { FontSize } from './fontsize';
@@ -104,14 +104,20 @@ const EditableEmailTemplate: React.FC = () => {
   };
 
   const getContent = () => {
+
+    console.log(containerRef?.current?.innerHTML)
+
     console.log(fieldState);
   };
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
 
   return (
     <>
       <div className="layout">
         <div className="main-content-area">
-          <div className="container">
+          <div className="container" ref={containerRef}>
             <header>
               <TipTapEditor
                 content={fieldState.title.value}
