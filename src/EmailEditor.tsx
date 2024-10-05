@@ -87,11 +87,6 @@ const FontFamily = ({editor}:any) => {
  }
 
 const EmailEditor = ({editor, options}:any) => {
-
-  useEffect(() => {
-    console.log(options)
-  }, [options])
-
  return (
     <div className={`email-editor`}>
       <h3>Email editor</h3>
