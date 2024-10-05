@@ -13,6 +13,7 @@ import './email.css';
 
 interface Field {
   value: string;
+  html: string;
   editorOptions: Array<{ label: string; type: string }>;
 }
 
@@ -56,6 +57,7 @@ const EditableEmailTemplate: React.FC = () => {
   const [fieldState, setFieldState] = useState<FieldState>({
     title: {
       value: 'Add your heading here',
+      html: '',
       editorOptions: [
         { label: 'Heading text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
@@ -63,6 +65,7 @@ const EditableEmailTemplate: React.FC = () => {
     },
     text1: {
       value: 'Add your content here',
+      html: '',
       editorOptions: [
         { label: 'Body text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
@@ -70,6 +73,7 @@ const EditableEmailTemplate: React.FC = () => {
     },
     text2: {
       value: 'Add your content here',
+      html: '',
       editorOptions: [
         { label: 'Body text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
@@ -77,17 +81,20 @@ const EditableEmailTemplate: React.FC = () => {
     },
     footer: {
       value: 'Address and contact details',
+      html: '',
       editorOptions: [{ label: 'Footer text size', type: 'fontSize' }],
     },
   });
 
   const onUpdate = (editor: Editor, field: keyof FieldState) => {
     const text = editor.getText();
+    const html = editor.getHTML();
 
     const newFieldState: FieldState = {
       ...fieldState,
     };
     newFieldState[field].value = text;
+    newFieldState[field].html = html;
 
     setFieldState(newFieldState);
   };
