@@ -1,0 +1,85 @@
+/* Container for the entire layout */
+.container {
+    width: 600px;
+    margin: 0 auto; /* Center the layout horizontally */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Header section */
+  .header {
+    font-size: 24px;
+    padding: 16px;
+    text-align: center;
+
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Main content area with two columns */
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 16px; /* Space between the columns */
+    padding: 16px;
+  }
+  
+  /* Individual columns */
+  .column {
+  
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Footer section */
+  .footer {
+
+    padding: 16px;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid #fff;
+  }
+  
+
+  .layout {
+    display: flex;
+  }
+  
+  .side-drawer {
+    width: 250px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    /* Initially hide the drawer */
+  }
+  
+  .side-drawer.open {
+    transform: translateX(0);
+  }
+  
+  .drawer-content {
+    padding: 20px;
+  }
+  
+  .main-content-area {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .side-drawer.open + .main-content-area {
+    margin-left: 250px;
+  }
+  
+  .column {
+    padding: 10px;
+  }
+  
+  .footer {
+    margin-top: 20px;
+  }
