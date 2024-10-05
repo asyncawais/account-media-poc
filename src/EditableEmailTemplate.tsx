@@ -55,28 +55,28 @@ const EditableEmailTemplate: React.FC = () => {
 
   const [fieldState, setFieldState] = useState<FieldState>({
     title: {
-      value: 'Your editable title...',
+      value: 'Add your heading here',
       editorOptions: [
         { label: 'Heading text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
     text1: {
-      value: 'Your editable text content...',
+      value: 'Add your content here',
       editorOptions: [
         { label: 'Body text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
     text2: {
-      value: 'Your editable text content...',
+      value: 'Add your content here',
       editorOptions: [
         { label: 'Body text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
     footer: {
-      value: 'Your editable footer...',
+      value: 'Address and contact details',
       editorOptions: [{ label: 'Footer text size', type: 'fontSize' }],
     },
   });
