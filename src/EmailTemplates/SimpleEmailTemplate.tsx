@@ -58,16 +58,6 @@ const text = {
   lineHeight: "1.5",
 };
 
-const link = {
-  display: "inline-block",
-  backgroundColor: "#007bff",
-  color: "#ffffff",
-  padding: "10px 20px",
-  borderRadius: "5px",
-  textDecoration: "none",
-  marginTop: "20px",
-};
-
 const footer = {
   borderTop: "1px solid #eeeeee",
   paddingTop: "10px",
