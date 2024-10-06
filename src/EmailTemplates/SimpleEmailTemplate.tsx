@@ -1,48 +1,30 @@
 import {
-  Html,
-  Head,
-  Preview,
-  Body,
   Container,
   Section,
   Text,
   Heading,
-  Link,
 } from "@react-email/components";
 
 const SimpleEmailTemplate = ({titleText, bodyText, footerText}:any) => {
   return (
-    <Html>
-      <Head />
-      <Preview>Welcome to our service! We are glad to have you.</Preview> {/* Email preview text */}
-      <Body style={main}>
-        <Container style={container}>
-          <Section style={header}>
-            <Heading style={heading}>{titleText}</Heading>
-          </Section>
-
-          <Section style={section}>
-            <Text style={text}>
-              {bodyText}
-            </Text>
-          </Section>
-
-          <Section style={footer}>
-            <Text style={footerTextStyle}>
-              {footerText}
-            </Text>
-          </Section>
-        </Container>
-      </Body>
-    </Html>
+    <>
+      <Container style={container}>
+        <Section style={header}>
+          <Heading style={heading}>{titleText}</Heading>
+        </Section>
+        <Section style={section}>
+          <Text style={text}>
+            {bodyText}
+          </Text>
+        </Section>
+        <Section style={footer}>
+          <Text style={footerTextStyle}>
+            {footerText}
+          </Text>
+        </Section>
+      </Container>
+    </>
   );
-};
-
-// Styles
-const main = {
-  backgroundColor: "#f4f4f4",
-  fontFamily: "Arial, sans-serif",
-  padding: "20px",
 };
 
 const container = {
