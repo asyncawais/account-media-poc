@@ -1,12 +1,11 @@
 import './App.css'
-import EditableEmailTemplate from './EditableEmailTemplate'
-
+// import CreateEmailEditor from './CreateEmailEditor'
+import CreateEmailEditor from './CreateEmailEditor/CreateEmailEditor'
 function App() {
 
   return (
     <>
-  
-      <EditableEmailTemplate />
+      <CreateEmailEditor />
     </>
   )
 }

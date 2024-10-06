@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  height: 100vh; /* Full height of the window */
+}
+
+.main-section {
+  flex: 1; /* This makes the main section take up the remaining space */
+  background-color: #f0f0f0;
+  padding: 20px;
+  min-width: 0; /* Prevents overflow issues */
+}
+
+.side-panel {
+  width: 460px; /* Fixed width for the side panel */
+  background-color: #ddd;
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  z-index: 999; /* Ensures the footer stays on top of all other content */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Stretches across the entire width of the window */
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Aligns the button to the right */
+  padding: 10px 20px;
+  z-index: 1000; /* Ensures the footer stays on top of all other content */
+  box-sizing: border-box;
+}
+
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
