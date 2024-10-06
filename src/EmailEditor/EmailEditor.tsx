@@ -89,8 +89,6 @@ const FontFamily = ({editor}:any) => {
 const EmailEditor = ({editor, options}:any) => {
  return (
     <div className={`email-editor`}>
-      <h3>Email editor</h3>
-
       {options?.map((option: any) => {
         if (option.type === 'fontSize') {
           return <FontSize editor={editor} key={option.type} label={option.label} />;
