@@ -16,3 +16,15 @@
   padding: 20px;
   box-sizing: border-box; /* Ensures padding is included in the width */
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Stretches across the entire width of the window */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000; /* Ensures the footer stays on top of all other content */
+}

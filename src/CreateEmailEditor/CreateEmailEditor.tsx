@@ -103,6 +103,9 @@ const Layout = () => {
         </div>
         <h2>Email settings</h2>
       </aside>
+      <footer className="footer">
+        <p>Footer Content</p>
+      </footer>
     </div>
   );
 };
