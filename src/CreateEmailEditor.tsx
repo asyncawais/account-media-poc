@@ -16,7 +16,7 @@ interface FieldState {
   footerText: Field;
 }
 
-const EditableEmailTemplate: React.FC = () => {
+const CreateEmailEditor: React.FC = () => {
   const [editor, setEditor] = useState<Editor | null>(null);
   const [selectedField, setSelectedField] = useState<keyof FieldState | ''>(''); // Ensuring the type is limited to the keys of FieldState
 
@@ -119,4 +119,4 @@ const EditableEmailTemplate: React.FC = () => {
   );
 };
 
-export default EditableEmailTemplate;
+export default CreateEmailEditor;
