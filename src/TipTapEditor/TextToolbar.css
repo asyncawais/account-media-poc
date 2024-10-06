@@ -8,7 +8,8 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
     position: absolute;
     z-index: 9999;
-    top: -15px;
+    top: -30px;
+    left: 5px;
   }
   
   .toolbar button {
