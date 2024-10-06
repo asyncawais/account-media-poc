@@ -104,7 +104,7 @@ const Layout = () => {
         <h2>Email settings</h2>
       </aside>
       <footer className="footer">
-        <p>Footer Content</p>
+        <button className="save-button" onClick={getContent}>Save &amp; Preview</button>
       </footer>
     </div>
   );
