@@ -82,6 +82,7 @@ const Layout = () => {
                   content={fieldState.bodyText.value}
                   onUpdate={(editor) => onUpdate(editor, 'bodyText')}
                   onFocus={(editor) => onFocus(editor, 'bodyText')}
+                  showTextToolbar
               />}
               footerText={
                 <TextContentEditor 
