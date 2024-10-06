@@ -31,10 +31,10 @@ const TextContentEditor: React.FC<TipTapEditorProps> = ({ content, onUpdate, onF
         onFocus(editor);
       },
       onBlur({event}) {
-        if (!event.relatedTarget || !(event.relatedTarget instanceof HTMLElement && event.relatedTarget.closest('.TextContentEditor'))) {
-          // Refocus the editor if blur wasn't caused by focus on another editor
-          editor?.chain().focus().run();
-        }
+        // if (!event.relatedTarget || !(event.relatedTarget instanceof HTMLElement && event.relatedTarget.closest('.TextContentEditor'))) {
+        //   // Refocus the editor if blur wasn't caused by focus on another editor
+        //   editor?.chain().focus().run();
+        // }
 
       }
     });
