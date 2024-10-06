@@ -19,6 +19,9 @@ interface FieldState {
 }
 
 const Layout = () => {
+  
+  
+  
   const [editor, setEditor] = useState<Editor | null>(null);
   const [selectedField, setSelectedField] = useState<keyof FieldState | ''>('');
   const [fieldState, setFieldState] = useState<FieldState>({
@@ -82,7 +85,7 @@ const Layout = () => {
                   content={fieldState.bodyText.value}
                   onUpdate={(editor) => onUpdate(editor, 'bodyText')}
                   onFocus={(editor) => onFocus(editor, 'bodyText')}
-                  showTextToolbar
+                  showTextToolbar={selectedField === 'bodyText'}
               />}
               footerText={
                 <TextContentEditor 

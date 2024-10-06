@@ -43,7 +43,7 @@ const TextContentEditor: React.FC<TipTapEditorProps> = ({ content, onUpdate, onF
     }
   
     return <div className="TextContentEditor">
-      {isFocused && showTextToolbar && <TextToolbar editor={editor} />}
+      {showTextToolbar && <TextToolbar editor={editor} />}
       <EditorContent editor={editor} />
     </div>;
   };
