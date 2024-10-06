@@ -21,8 +21,7 @@ interface TipTapEditorProps {
 }
 
 const TextContentEditor: React.FC<TipTapEditorProps> = ({ content, onUpdate, onFocus, showTextToolbar }) => {
-    const [isFocused, setIsFocused] = useState(false); 
-
+    
     const editor = useEditor({
       extensions: [StarterKit, Document, Paragraph, Text, TextStyle, FontFamily, FontSize],
       content: content,
@@ -31,10 +30,6 @@ const TextContentEditor: React.FC<TipTapEditorProps> = ({ content, onUpdate, onF
       },
       onFocus({ editor }) {
         onFocus(editor);
-        setIsFocused(true);
-      },
-      onBlur() {
-        
       },
     });
   
