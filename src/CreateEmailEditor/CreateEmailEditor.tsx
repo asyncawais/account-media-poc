@@ -3,7 +3,7 @@ import { Editor } from '@tiptap/react';
 
 import EmailEditor from '../EmailEditor/EmailEditor';
 import TextContentEditor from '../TextContentEditor'
-import SimpleEmailTemplate from '../SimpleEmailTemplate'
+import SimpleEmailTemplate from '../EmailTemplates/SimpleEmailTemplate'
 
 import './CreateEmailEditor.css';
 
@@ -24,7 +24,6 @@ const Layout = () => {
   const [fieldState, setFieldState] = useState<FieldState>({
     titleText: {
       value: '<span style="font-size: 32px">Add your heading here</span>',
-    
       editorOptions: [
         { label: 'Heading text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
@@ -37,10 +36,8 @@ const Layout = () => {
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
-  
     footerText: {
       value: 'Address and contact details',
-    
       editorOptions: [{ label: 'Footer text size', type: 'fontSize' }],
     },
   });
