@@ -1,0 +1,35 @@
+.toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding: 8px; /* Add some padding around the toolbar */
+    background-color: white; /* Toolbar background */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    position: absolute;
+    z-index: 9999;
+    top: -30px;
+    left: 5px;
+  }
+  
+  .toolbar button {
+    padding: 8px 12px; /* Increased padding for better button appearance */
+    border: 1px solid #ccc; /* Grey outline */
+    background-color: white; /* Button background */
+    color: black; /* Button text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners for buttons */
+    font-size: 14px;
+  }
+  
+  /* Change button background color on hover */
+  .toolbar button:hover {
+    background-color: #f7f7f7; /* Light grey background on hover */
+    border-color: #aaa; /* Darker grey outline on hover */
+  }
+  
+  .toolbar button:disabled {
+    background-color: #f0f0f0; /* Light grey for disabled buttons */
+    color: #aaa; /* Grey text for disabled buttons */
+    cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+  }
