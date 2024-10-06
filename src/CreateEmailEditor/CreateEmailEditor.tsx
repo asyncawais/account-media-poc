@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { Editor } from '@tiptap/react';
 
 import EmailEditor from '../EmailEditor/EmailEditor';
-import TextContentEditor from '../TextContentEditor'
+import TextContentEditor from '../TipTapEditor/TextContentEditor'
 import SimpleEmailTemplate from '../EmailTemplates/SimpleEmailTemplate'
 
 import './CreateEmailEditor.css';
