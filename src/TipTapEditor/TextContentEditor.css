@@ -1,3 +1,8 @@
 .TextContentEditor {
     position: relative;
 }
+
+.ProseMirror-focused {
+    outline: 2px solid black;
+    border-radius: 2px;
+}
