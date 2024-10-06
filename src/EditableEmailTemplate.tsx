@@ -8,7 +8,7 @@ import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
 import { FontFamily } from './fontFamily';
 import EmailEditor from './EmailEditor';
-
+import SimpleEmailTemplate from './SimpleEmailTemplate'
 import './email.css';
 
 interface Field {
@@ -17,10 +17,9 @@ interface Field {
 }
 
 interface FieldState {
-  title: Field;
-  text1: Field;
-  text2: Field;
-  footer: Field;
+  titleText: Field;
+  bodyText: Field;
+  footerText: Field;
 }
 
 // TipTapEditor Component with content update callback
@@ -54,7 +53,7 @@ const EditableEmailTemplate: React.FC = () => {
   const [selectedField, setSelectedField] = useState<keyof FieldState | ''>(''); // Ensuring the type is limited to the keys of FieldState
 
   const [fieldState, setFieldState] = useState<FieldState>({
-    title: {
+    titleText: {
       value: '<span style="font-size: 32px">Add your heading here</span>',
     
       editorOptions: [
@@ -62,23 +61,15 @@ const EditableEmailTemplate: React.FC = () => {
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
-    text1: {
+    bodyText: {
       value: 'Add your content here',
-     
       editorOptions: [
         { label: 'Body text size', type: 'fontSize' },
         { label: 'Selected colour', type: 'backgroundColour' },
       ],
     },
-    text2: {
-      value: 'Add your content here',
-     
-      editorOptions: [
-        { label: 'Body text size', type: 'fontSize' },
-        { label: 'Selected colour', type: 'backgroundColour' },
-      ],
-    },
-    footer: {
+  
+    footerText: {
       value: 'Address and contact details',
     
       editorOptions: [{ label: 'Footer text size', type: 'fontSize' }],
@@ -117,42 +108,26 @@ const EditableEmailTemplate: React.FC = () => {
     <>
       <div className="layout">
         <div className="main-content-area">
-          <div className="container" ref={containerRef}>
-            <header>
-              <TipTapEditor
-                content={fieldState.title.value}
-                onUpdate={(editor) => onUpdate(editor, 'title')}
-                onFocus={(editor) => onFocus(editor, 'title')}
-              />
-            </header>
-
-            {/* Main Content Section */}
-            <main className="main-content">
-              <div className="column">
-                <TipTapEditor
-                  content={fieldState.text1.value}
-                  onUpdate={(editor) => onUpdate(editor, 'text1')}
-                  onFocus={(editor) => onFocus(editor, 'text1')}
-                />
-              </div>
-              <div className="column">
-                <TipTapEditor
-                  content={fieldState.text2.value}
-                  onUpdate={(editor) => onUpdate(editor, 'text2')}
-                  onFocus={(editor) => onFocus(editor, 'text2')}
-                />
-              </div>
-            </main>
-
-            {/* Footer Section */}
-            <footer className="footer-email">
-              <TipTapEditor
-                content={fieldState.footer.value}
-                onUpdate={(editor) => onUpdate(editor, 'footer')}
-                onFocus={(editor) => onFocus(editor, 'footer')}
-              />
-            </footer>
-          </div>
+        <SimpleEmailTemplate 
+          titleText={
+            <TipTapEditor 
+              content={fieldState.titleText.value}
+              onUpdate={(editor) => onUpdate(editor, 'titleText')}
+              onFocus={(editor) => onFocus(editor, 'titleText')}
+            />}
+            bodyText={
+              <TipTapEditor 
+                content={fieldState.bodyText.value}
+                onUpdate={(editor) => onUpdate(editor, 'bodyText')}
+                onFocus={(editor) => onFocus(editor, 'bodyText')}
+            />}
+            footerText={
+              <TipTapEditor 
+                content={fieldState.footerText.value}
+                onUpdate={(editor) => onUpdate(editor, 'footerText')}
+                onFocus={(editor) => onFocus(editor, 'footerText')}
+            />}
+          />
         </div>
 
         {/* Side Drawer */}
